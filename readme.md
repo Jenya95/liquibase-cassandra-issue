@@ -11,7 +11,7 @@ Liquibase cassandra update running from java code never ends - number of non dae
 3. Run application either from Intellij Idea run configuration (main method in com.sample.LiquibaseApp) or with maven: ```mvn compile exec:java```
 
 ## Actual result
-Program never ends because of number of living non-deamon threads, log:
+Program never ends because of number of living non-daemon threads, log:
 ```text
 [main] INFO com.datastax.oss.driver.internal.core.DefaultMavenCoordinates - DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.8.0
 [s0-admin-0] INFO com.datastax.oss.driver.internal.core.time.Clock - Using native clock for microsecond precision
