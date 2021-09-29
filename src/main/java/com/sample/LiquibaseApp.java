@@ -48,7 +48,7 @@ public class LiquibaseApp {
         connection.getDSIConnection().close();
         connection.close();
 
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
             while (true) {
                 try {
                     Thread.sleep(1000);
@@ -62,7 +62,9 @@ public class LiquibaseApp {
                     e.printStackTrace();
                 }
             }
-        }).start();
+        });
+        thread.setDaemon(true);
+        thread.start();
     }
 
 
